@@ -1,0 +1,11 @@
+My general idea here is to wrap OSTree in a simpler API that doesn't use any of the
+GObject, GLib, Gio, etc. data structures. This should allow users (the weldr team)
+to be able to write ffi bindings in Rust and Haskell without too much trouble.
+
+Functionality will be limited to what we need for the project, and won't be a 1:1
+mapping of libOSTree's API, instead it will be higher level functions using basic
+C data types.
+
+Use a simple Makefile to build this, depend on pkg-config for the ostree
+library flags and includes.
+
